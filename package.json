@@ -2,7 +2,7 @@
   "name": "applicaboard",
   "version": "0.0.0",
   "private": false,
-  "description": "",
+  "description": "Ethereum DApp for application tracking in transparent government",
   "keywords": ["dapp"],
   "license": "MIT",
   "homepage": "https://github.com/crypto-libertarian/applicaboard",
