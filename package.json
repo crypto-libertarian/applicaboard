@@ -3,7 +3,9 @@
   "version": "0.0.0",
   "private": false,
   "description": "Ethereum DApp for application tracking in transparent government",
-  "keywords": ["dapp"],
+  "keywords": [
+    "dapp"
+  ],
   "license": "MIT",
   "homepage": "https://github.com/crypto-libertarian/applicaboard",
   "bugs": "https://github.com/crypto-libertarian/applicaboard/issues",
@@ -19,7 +21,10 @@
   "dependencies": {
     "react": "^16.8.3",
     "react-dom": "^16.8.3",
-    "react-scripts": "2.1.5"
+    "react-redux": "^6.0.1",
+    "react-scripts": "2.1.5",
+    "redux": "^4.0.1",
+    "redux-thunk": "^2.3.0"
   },
   "scripts": {
     "start": "react-scripts start",
