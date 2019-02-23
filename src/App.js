@@ -1,7 +1,10 @@
 import React, { Component } from 'react'
+import { connect } from 'react-redux'
 
-export default class App extends Component {
+class App extends Component {
   render() {
     return <p>Hello, World!</p>
   }
 }
+
+export default connect()(App)
