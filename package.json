@@ -1,7 +1,21 @@
 {
   "name": "applicaboard",
-  "version": "0.1.0",
-  "private": true,
+  "version": "0.0.0",
+  "private": false,
+  "description": "",
+  "keywords": ["dapp"],
+  "license": "MIT",
+  "homepage": "https://github.com/crypto-libertarian/applicaboard",
+  "bugs": "https://github.com/crypto-libertarian/applicaboard/issues",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/crypto-libertarian/applicaboard.git"
+  },
+  "author": {
+    "name": "Alex Kotov",
+    "email": "kotovalexarian@gmail.com",
+    "url": "https://kotovalexarian.com"
+  },
   "dependencies": {
     "react": "^16.8.3",
     "react-dom": "^16.8.3",
