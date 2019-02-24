@@ -19,6 +19,10 @@ contract Applicaboard {
 
   Application[] public _applications;
 
+  function getApplicationsCount() public view returns (uint) {
+    return _applications.length;
+  }
+
   function createApplication(string memory text) public {
     Application memory application = Application(msg.sender, text, false, '');
 
