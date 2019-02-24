@@ -1,9 +1,13 @@
 import { Drizzle, generateStore } from 'drizzle'
 
 import ApplicaboardContract from './contracts/Applicaboard.json'
+import MigrationsContract   from './contracts/Migrations.json'
 
 const options = {
-  contracts: [ApplicaboardContract],
+  contracts: [
+    ApplicaboardContract,
+    MigrationsContract,
+  ],
 }
 
 export default () => {
