@@ -3724,6 +3724,14 @@ drbg.js@^1.0.1:
     create-hash "^1.1.2"
     create-hmac "^1.1.4"
 
+drizzle-react@^1.2.0:
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/drizzle-react/-/drizzle-react-1.2.0.tgz#4da5e7bd61ee4482dc2d0b3db060c874b33a9326"
+  integrity sha512-CyEMq9VBOivBz/EHCZmzXt3oQgGe4aflL3HAC7nCqUHlv2iJrMc+HEs9NVHQxlymIqOn+l5WvLLBAJ9FEevh2w==
+  dependencies:
+    prop-types "^15.5.10"
+    react "^16.4.2"
+
 drizzle@^1.3.3:
   version "1.3.3"
   resolved "https://registry.yarnpkg.com/drizzle/-/drizzle-1.3.3.tgz#438a6d8e8b24d13458a7374a606f2905136bc732"
@@ -8737,7 +8745,7 @@ prompts@^0.1.9:
     kleur "^2.0.1"
     sisteransi "^0.1.1"
 
-prop-types@^15.6.1, prop-types@^15.7.2:
+prop-types@^15.5.10, prop-types@^15.6.1, prop-types@^15.7.2:
   version "15.7.2"
   resolved "https://registry.yarnpkg.com/prop-types/-/prop-types-15.7.2.tgz#52c41e75b8c87e72b9d9360e0206b99dcbffa6c5"
   integrity sha512-8QQikdH7//R2vurIJSutZ1smHYTcLpRWEOlHnzcWHmBYrOGUysKwSsrC89BCiFj3CbrfJ/nXFdJepOVrY1GCHQ==
@@ -9077,7 +9085,7 @@ react-scripts@2.1.5:
   optionalDependencies:
     fsevents "1.2.4"
 
-react@^16.8.3:
+react@^16.4.2, react@^16.8.3:
   version "16.8.3"
   resolved "https://registry.yarnpkg.com/react/-/react-16.8.3.tgz#c6f988a2ce895375de216edcfaedd6b9a76451d9"
   integrity sha512-3UoSIsEq8yTJuSu0luO1QQWYbgGEILm+eJl2QN/VLDi7hL+EN18M3q3oVZwmVzzBJ3DkM7RMdRwBmZZ+b4IzSA==
