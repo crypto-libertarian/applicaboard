@@ -17,7 +17,13 @@ contract Applicaboard {
     string response;
   }
 
+  address _owner;
+
   Application[] public _applications;
+
+  constructor() public {
+    _owner = msg.sender;
+  }
 
   function getApplicationsCount() public view returns (uint) {
     return _applications.length;
@@ -34,6 +40,8 @@ contract Applicaboard {
   }
 
   function createResponse(uint applicationId, string memory response) public {
+    require(msg.sender == _owner);
+
     Application storage application = _applications[applicationId];
 
     require(!application.resolved);
