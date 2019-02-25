@@ -26,19 +26,16 @@ class AppContainer extends Component {
 }
 
 class Foo extends React.Component {
-  state = {
-    getApplicationsCountKey: null,
-  }
+  state = { dataKey: null }
 
   componentDidMount() {
     const { drizzle } = this.props
 
     const contract = drizzle.contracts.Applicaboard
 
-    const getApplicationsCountKey =
-      contract.methods['getApplicationsCount'].cacheCall()
+    const dataKey = contract.methods['getApplicationsCount'].cacheCall()
 
-    this.setState({ getApplicationsCountKey })
+    this.setState({ dataKey })
   }
 
   render() {
@@ -46,10 +43,11 @@ class Foo extends React.Component {
 
     const contract = drizzleState.contracts.Applicaboard
 
-    const data =
-      contract.getApplicationsCount[this.state.getApplicationsCountKey]
+    const data = contract.getApplicationsCount[this.state.dataKey]
 
-    return <p>{data && data.value}</p>
+    if (!data) { return <div>0</div> }
+
+    return <p>{data.value}</p>
   }
 }
 
