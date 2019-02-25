@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { DrizzleContext } from 'drizzle-react'
 
+import Table from 'react-bootstrap/Table'
+
 const mapStateToProps = state => ({...state})
 
 class AppContainer extends Component {
@@ -45,20 +47,32 @@ class Foo extends React.Component {
 
     const data = contract.getApplicationsCount[this.state.dataKey]
 
-    if (!data) { return <div>0</div> }
+    let value = 0
 
-    const value = parseInt(data.value)
+    if (data && data.value) {
+      value = parseInt(data.value)
+    }
 
-    if (isNaN(value)) { return <div>0</div> }
+    if (isNaN(value)) {
+      value = 0
+    }
 
     return (
       <div>
-        <div>{value}</div>
-        <div>
-          {[...Array(value)].map((e, i) =>
-            <Bar key={i} nr={i} drizzle={drizzle} drizzleState={drizzleState}/>
-          )}
-        </div>
+        <Table striped bordered hover>
+          <thead>
+            <tr>
+              <th>Applicant</th>
+              <th>Text</th>
+              <th>Response</th>
+            </tr>
+          </thead>
+          <tbody>
+            {[...Array(value)].map((e, i) =>
+              <Bar key={i} nr={i} drizzle={drizzle} drizzleState={drizzleState}/>
+            )}
+          </tbody>
+        </Table>
       </div>
     )
   }
@@ -84,19 +98,16 @@ class Bar extends React.Component {
 
     const data = contract._applications[this.state.dataKey]
 
-    if (!data) { return <div></div> }
+    if (!data) { return <tr></tr> }
 
     const value = data.value
 
     return (
-      <div>
-        <div>
-          {value.text}
-        </div>
-        <div>
-          {value.applicant}
-        </div>
-      </div>
+      <tr>
+        <td>{value.text}</td>
+        <td>{value.applicant}</td>
+        <td>{value.response}</td>
+      </tr>
     )
   }
 }
