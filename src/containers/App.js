@@ -104,8 +104,8 @@ class Bar extends React.Component {
 
     return (
       <tr>
-        <td>{value.text}</td>
         <td>{value.applicant}</td>
+        <td>{value.text}</td>
         <td>{value.response}</td>
       </tr>
     )
