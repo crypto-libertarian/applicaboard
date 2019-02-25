@@ -8,6 +8,12 @@ const options = {
     ApplicaboardContract,
     MigrationsContract,
   ],
+  events: {
+    Applicaboard: [
+      'NewApplication',
+      'NewResponse',
+    ],
+  },
 }
 
 export default () => {
