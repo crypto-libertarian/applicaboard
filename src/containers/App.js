@@ -39,7 +39,7 @@ class Foo extends React.Component {
   }
 
   render() {
-    const { drizzleState } = this.props
+    const { drizzle, drizzleState } = this.props
 
     const contract = drizzleState.contracts.Applicaboard
 
@@ -47,7 +47,52 @@ class Foo extends React.Component {
 
     if (!data) { return <div>0</div> }
 
-    return <p>{data.value}</p>
+    const value = parseInt(data.value)
+
+    if (isNaN(value)) { return <div>0</div> }
+
+    return (
+      <div>
+        <div>{value}</div>
+        <div>
+          {[...Array(value)].map((e, i) =>
+            <Bar key={i} nr={i} drizzle={drizzle} drizzleState={drizzleState}/>
+          )}
+        </div>
+      </div>
+    )
+  }
+}
+
+class Bar extends React.Component {
+  state = { dataKey: null }
+
+  componentDidMount() {
+    const { drizzle, nr } = this.props
+
+    const contract = drizzle.contracts.Applicaboard
+
+    const dataKey = contract.methods['_applications'].cacheCall(nr)
+
+    this.setState({ dataKey })
+  }
+
+  render() {
+    const { drizzleState } = this.props
+
+    const contract = drizzleState.contracts.Applicaboard
+
+    const data = contract._applications[this.state.dataKey]
+
+    if (!data) { return <div></div> }
+
+    const value = data.value
+
+    return (
+      <div>
+        {value.text}
+      </div>
+    )
   }
 }
 
