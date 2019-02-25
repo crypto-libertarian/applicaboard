@@ -90,7 +90,12 @@ class Bar extends React.Component {
 
     return (
       <div>
-        {value.text}
+        <div>
+          {value.text}
+        </div>
+        <div>
+          {value.applicant}
+        </div>
       </div>
     )
   }
