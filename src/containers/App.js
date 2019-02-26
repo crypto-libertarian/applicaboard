@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React from 'react'
 import { connect } from 'react-redux'
 import { DrizzleContext } from 'drizzle-react'
 
@@ -6,7 +6,7 @@ import Table from 'react-bootstrap/Table'
 
 const mapStateToProps = state => ({...state})
 
-class AppContainer extends Component {
+class AppContainer extends React.Component {
   render() {
     return (
       <DrizzleContext.Consumer>
