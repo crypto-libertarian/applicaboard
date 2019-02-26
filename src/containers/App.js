@@ -10,15 +10,14 @@ class AppContainer extends React.Component {
   render() {
     return (
       <DrizzleContext.Consumer>
-        {drizzleContext => {
-          const { drizzle, drizzleState, initialized } = drizzleContext
-          return this.renderContent(drizzle, drizzleState, initialized)
-        }}
+        {this.renderContent}
       </DrizzleContext.Consumer>
     )
   }
 
-  renderContent(drizzle, drizzleState, initialized) {
+  renderContent(drizzleContext) {
+    const { drizzle, drizzleState, initialized } = drizzleContext
+
     if (!initialized) {
       return <p>Loading...</p>
     }
