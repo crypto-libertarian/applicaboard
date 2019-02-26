@@ -1,10 +1,17 @@
 import { createStore } from 'redux'
 
+import middleware, { saga } from './middleware'
 import rootReducer from './reducers'
-import middleware from './middleware'
+import rootSaga from './sagas'
 
-export default (history, initialState = {}) => createStore(
-  rootReducer(history),
-  initialState,
-  middleware,
-)
+export default (history, initialState = {}) => {
+  const result = createStore(
+    rootReducer(history),
+    initialState,
+    middleware,
+  )
+
+  saga.run(rootSaga)
+
+  return result
+}
