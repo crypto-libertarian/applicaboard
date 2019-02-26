@@ -16,7 +16,7 @@ import AppContainer from './containers/App'
 const history = createBrowserHistory()
 
 const store = configureStore(history)
-const drizzle = configureDrizzle()
+const drizzle = configureDrizzle(store)
 
 ReactDOM.render(
   <Provider store={store}>

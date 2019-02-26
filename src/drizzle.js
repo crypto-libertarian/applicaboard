@@ -1,4 +1,4 @@
-import { Drizzle, generateStore } from 'drizzle'
+import { Drizzle } from 'drizzle'
 
 import ApplicaboardContract from './contracts/Applicaboard.json'
 import MigrationsContract   from './contracts/Migrations.json'
@@ -16,7 +16,4 @@ const options = {
   },
 }
 
-export default () => {
-  const store = generateStore(options)
-  return new Drizzle(options, store)
-}
+export default store => new Drizzle(options, store)
