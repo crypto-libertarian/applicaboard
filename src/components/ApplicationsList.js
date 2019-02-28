@@ -10,7 +10,7 @@ export default class ApplicationsListComponent extends React.Component {
   componentDidMount() {
     const { drizzle } = this.props
     const contract = drizzle.contracts.Applicaboard
-    const dataKey = contract.methods['getApplicationsCount'].cacheCall()
+    const dataKey = contract.methods.getApplicationsCount.cacheCall()
     this.setState({ dataKey })
   }
 

@@ -6,7 +6,7 @@ export default class ApplicationComponent extends React.Component {
   componentDidMount() {
     const { drizzle, applicationId } = this.props
     const contract = drizzle.contracts.Applicaboard
-    const dataKey = contract.methods['_applications'].cacheCall(applicationId)
+    const dataKey = contract.methods._applications.cacheCall(applicationId)
     this.setState({ dataKey })
   }
 
