@@ -12,7 +12,6 @@ import configureDrizzle from './drizzle'
 import Routes from './routes'
 
 const history = createBrowserHistory()
-
 const store = configureStore(history)
 const drizzle = configureDrizzle(store)
 
