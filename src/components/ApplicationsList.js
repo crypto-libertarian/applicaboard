@@ -1,10 +1,16 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 
 import Table from 'react-bootstrap/Table'
 
 import ApplicationComponent from '../components/Application'
 
 export default class ApplicationsListComponent extends React.Component {
+  static propTypes = {
+    drizzle:      PropTypes.object.isRequired,
+    drizzleState: PropTypes.object.isRequired,
+  }
+
   state = { dataKey: null }
 
   componentDidMount() {

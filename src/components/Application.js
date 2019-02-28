@@ -1,6 +1,13 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 
 export default class ApplicationComponent extends React.Component {
+  static propTypes = {
+    drizzle:       PropTypes.object.isRequired,
+    drizzleState:  PropTypes.object.isRequired,
+    applicationId: PropTypes.number.isRequired,
+  }
+
   state = { dataKey: null }
 
   componentDidMount() {

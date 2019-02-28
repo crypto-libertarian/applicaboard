@@ -4,8 +4,6 @@ import { DrizzleContext } from 'drizzle-react'
 
 import ApplicationsListComponent from '../components/ApplicationsList'
 
-const mapStateToProps = state => ({...state})
-
 class AppContainer extends React.Component {
   render() {
     return (
@@ -28,4 +26,4 @@ class AppContainer extends React.Component {
   }
 }
 
-export default connect(mapStateToProps)(AppContainer)
+export default connect()(AppContainer)
