@@ -4,6 +4,8 @@ import { DrizzleContext } from 'drizzle-react'
 
 import Table from 'react-bootstrap/Table'
 
+import ApplicationComponent from '../components/Application'
+
 const mapStateToProps = state => ({...state})
 
 class AppContainer extends React.Component {
@@ -68,45 +70,16 @@ class Foo extends React.Component {
           </thead>
           <tbody>
             {[...Array(value)].map((e, i) =>
-              <Bar key={i} nr={i} drizzle={drizzle} drizzleState={drizzleState}/>
+              <ApplicationComponent
+                key={i}
+                drizzle={drizzle}
+                drizzleState={drizzleState}
+                applicationId={i}
+              />
             )}
           </tbody>
         </Table>
       </div>
-    )
-  }
-}
-
-class Bar extends React.Component {
-  state = { dataKey: null }
-
-  componentDidMount() {
-    const { drizzle, nr } = this.props
-
-    const contract = drizzle.contracts.Applicaboard
-
-    const dataKey = contract.methods['_applications'].cacheCall(nr)
-
-    this.setState({ dataKey })
-  }
-
-  render() {
-    const { drizzleState } = this.props
-
-    const contract = drizzleState.contracts.Applicaboard
-
-    const data = contract._applications[this.state.dataKey]
-
-    if (!data) { return <tr></tr> }
-
-    const value = data.value
-
-    return (
-      <tr>
-        <td>{value.applicant}</td>
-        <td>{value.text}</td>
-        <td>{value.response}</td>
-      </tr>
     )
   }
 }
