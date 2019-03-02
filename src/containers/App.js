@@ -35,7 +35,7 @@ class AppContainer extends React.Component {
       <Container>
         <Row>
           <Col>
-            <ApplicationFormComponent/>
+            <ApplicationFormComponent drizzle={drizzle}/>
           </Col>
         </Row>
 

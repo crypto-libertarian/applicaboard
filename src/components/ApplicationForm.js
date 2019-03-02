@@ -41,5 +41,7 @@ export default class ApplicationFormComponent extends React.Component {
 
   onSubmitClick() {
     console.log(this.state.text)
+
+    this.props.drizzle.contracts.Applicaboard.methods.createApplication.cacheSend(this.state.text)
   }
 }
