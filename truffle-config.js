@@ -14,8 +14,6 @@ function provider(network) {
 }
 
 module.exports = {
-  contracts_build_directory: './artifacts',
-
   networks: {
     development: {
       host: '127.0.0.1',
