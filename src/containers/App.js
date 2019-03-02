@@ -11,6 +11,12 @@ import Button    from 'react-bootstrap/Button'
 import ApplicationsListComponent from '../components/ApplicationsList'
 
 class AppContainer extends React.Component {
+  constructor(props, context) {
+    super(props, context)
+
+    this.renderContent = this.renderContent.bind(this)
+  }
+
   render() {
     return (
       <DrizzleContext.Consumer>
