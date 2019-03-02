@@ -1,7 +1,7 @@
 import { Drizzle } from 'drizzle'
 
-import ApplicaboardContract from './contracts/Applicaboard.json'
-import MigrationsContract   from './contracts/Migrations.json'
+import ApplicaboardContract from './artifacts/Applicaboard.json'
+import MigrationsContract   from './artifacts/Migrations.json'
 
 const options = {
   contracts: [
